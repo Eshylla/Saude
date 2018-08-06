@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Gerenciador de Produtos</title>
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+	Marca: <h:inputText value="#{basicoBeanP.produto.marcaP}"></h:inputText> 
+	Quantidade no estoque: <h:inputText value="#{basicoBeanP.produto.quantE}"></h:inputText>
+	Nome: <h:inputText value="#{basicoBeanP.produto.nomeP}"></h:inputText> 
+	
+
+		<h:commandButton value="Cadastrar"
+			action="#{basicoBeanP.addProdutos()}"></h:commandButton>
+		
+	</h:form>
+	<h:dataTable var="produz" value="#{basicoBeanP.produtos}">
+		<h:column>
+			<f:facet name="header">Marca</f:facet>
+			<h:outputText value="#{produz.marcaP}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Quantidade do estoque</f:facet>
+			<h:outputText value="#{produz.quantE}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			<h:outputText value="#{produz.nomeP}" />
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Opções</f:facet>
+			<h:commandButton  action="#{basicoBeanP.remove(produz.id_produtos)}"></h:commandButton>
+		</h:column>
+			
+	</h:dataTable>
+</h:body>
+
+</html>

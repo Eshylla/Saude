@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Gerenciador de Fornecedora</title>
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+	Nome: <h:inputText value="#{basicoBean.fornecedora.nome}"></h:inputText> 
+	Rua: <h:inputText value="#{basicoBean.fornecedora.ruaF}"></h:inputText> 
+	Bairro: <h:inputText value="#{basicoBean.fornecedora.bairroF}"></h:inputText>
+	Cidade: <h:inputText value="#{basicoBean.fornecedora.cidadeF}"></h:inputText>
+	Telefone: <h:inputText value="#{basicoBean.fornecedora.telefoneF}"></h:inputText>
+
+		<h:commandButton value="Cadastrar"
+			action="#{basicoBean.addFornecedora()}"></h:commandButton>
+		
+	</h:form>
+	<h:dataTable var="fornece" value="#{basicoBean.fornecedoras}">
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			<h:outputText value="#{fornece.nome}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Rua</f:facet>
+			<h:outputText value="#{fornece.ruaF}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="h
+			,eader">Bairro</f:facet>
+			<h:outputText value="#{fornece.bairroF}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Cidade</f:facet>
+			<h:outputText value="#{fornece.cidadeF}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Telefone</f:facet>
+			<h:outputText value="#{fornece.telefoneF}" />
+		</h:column>
+		
+		
+			
+	</h:dataTable>
+</h:body>
+
+</html>

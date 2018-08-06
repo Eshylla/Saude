@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Gerenciador de Serviços</title>
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+	Preço Normal: <h:inputText value="#{basicoBeanP.servico.preco_normal}"></h:inputText> 
+	Descrição: <h:inputText value="#{basicoBeanP.servico.descricaoS}"></h:inputText>
+	Nome: <h:inputText value="#{basicoBeanP.servico.nomeS}"></h:inputText> 
+	
+
+		<h:commandButton value="Cadastrar"
+			action="#{basicoBeanP.addServico()}"></h:commandButton>
+		
+	</h:form>
+	<h:dataTable var="serve" value="#{basicoBeanS.servicos}">
+		<h:column>
+			<f:facet name="header">Preço Normal</f:facet>
+			<h:outputText value="#{serve.preco_normal}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Descrição</f:facet>
+			<h:outputText value="#{serve.descricaoS}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			<h:outputText value="#{serve.nomeS}" />
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Opções</f:facet>
+			<h:commandButton  action="#{basicoBeanS.remove(serve.id_servico)}"></h:commandButton>
+		</h:column>
+			
+	</h:dataTable>
+</h:body>
+
+</html>

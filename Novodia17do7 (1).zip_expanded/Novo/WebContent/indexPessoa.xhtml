@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Gerenciador de Pessoa</title>
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+	Nome: <h:inputText value="#{basicoBeanPessoa.pessoa.nome}"></h:inputText> 
+	id: <h:inputText value="#{basicoBeanPessoa.pessoa.idPessoa}"></h:inputText> 
+
+		<h:commandButton value="Cadastrar"
+			action="#{basicoBeanPessoa.addPessoa()}"></h:commandButton>
+		
+	</h:form>
+	<h:dataTable var="pes" value="#{basicoBeanPessoa.pessoas}">
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			<h:outputText value="#{pes.nome}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			<h:outputText value="#{pes.idPessoa}" />
+		</h:column>
+
+	
+		
+		
+			
+	</h:dataTable>
+</h:body>
+
+</html>

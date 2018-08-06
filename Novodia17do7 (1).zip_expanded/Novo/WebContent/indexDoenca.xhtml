@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Gerenciador de Doenca</title>
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+	Id: <h:inputText value="#{basicoBeanDoenca.doenca.idDoenca}"></h:inputText> 
+	Sintoma: <h:inputText value="#{basicoBeanDoenca.doenca.sintoma}"></h:inputText> 
+
+		<h:commandButton value="Cadastrar"
+			action="#{basicoBeanDoenca.addDoencas()}"></h:commandButton>
+		
+	</h:form>
+	<h:dataTable var="dodoi" value="#{basicoBeanDoenca.doencas}">
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			<h:outputText value="#{dodoi.idDoenca}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Sintoma</f:facet>
+			<h:outputText value="#{dodoi.sintoma}" />
+		</h:column>
+
+	
+		
+		
+			
+	</h:dataTable>
+</h:body>
+
+</html>
