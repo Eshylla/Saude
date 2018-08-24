@@ -32,9 +32,17 @@ public class Doenca implements Identificavel {
 	public void setSintoma(String sintoma) {
 		this.sintoma = sintoma;
 	}
+	public Doenca(Long id, String sintoma) {
+		super();
+		this.id = id;
+		this.sintoma = sintoma;
+	}
 	
 	
-	
+	public Doenca() {
+		super();
+	}
+
 	
 	
 	

@@ -32,10 +32,16 @@ public class Tratamento implements Identificavel {
 	public void setMedicamento(String medicamento) {
 		this.medicamento = medicamento;
 	}
+	public Tratamento(Long id, String medicamento) {
+		super();
+		this.id = id;
+		this.medicamento = medicamento;
+	}
 	
 	
-	
-	
-	
+	public Tratamento() {
+		super();
+	}
+
 	
 }
