@@ -15,12 +15,15 @@ package EM;
 		private String bacteria;
 		private String generico;
 	
-		// arrumar o mapeamento 
+		
 		@ManyToMany(mappedBy="causas")
 		private Set<Doenca> doencas;
 		
+		// arrumar o mapeamento 
 		@ManyToMany(mappedBy="campanhas")
 		private Set<Pessoa> pessoas;
+		
+		
 
 		public Long getId() {
 			return id;

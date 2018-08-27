@@ -3,7 +3,10 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Campanha implements Identificavel {
@@ -11,12 +14,29 @@ public class Campanha implements Identificavel {
 	private Long id;
 	private String tipoCampanha;
 	
-	@ManyToMany(mappedBy="campanhas")
-	private Set<Doenca> doencas;
+	@ManyToOne
+	@JoinColumn(name="id_doenca")
+	private Doenca doencas;
 	
-	@ManyToMany(mappedBy="campanhas")
+	@ManyToMany
+    @JoinTable(name="pessoa_campanha", joinColumns=
+    {@JoinColumn(name="pessoa_id")}, inverseJoinColumns=
+      {@JoinColumn(name="campanha_id")})
 	private Set<Pessoa> pessoas;
 	
+	
+	public Doenca getDoencas() {
+		return doencas;
+	}
+	public void setDoencas(Doenca doencas) {
+		this.doencas = doencas;
+	}
+	public Set<Pessoa> getPessoas() {
+		return pessoas;
+	}
+	public void setPessoas(Set<Pessoa> pessoas) {
+		this.pessoas = pessoas;
+	}
 	public Long getId() {
 		return id;
 	}

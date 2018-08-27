@@ -18,7 +18,16 @@ public class Tratamento implements Identificavel {
 	private Long id;
 	private String medicamento;
 	
+	@ManyToMany(mappedBy="tratamentos")
+	private Set<Doenca> doencas;
+	
 			
+	public Set<Doenca> getDoencas() {
+		return doencas;
+	}
+	public void setDoencas(Set<Doenca> doencas) {
+		this.doencas = doencas;
+	}
 	public Long getId() {
 		return id;
 	}

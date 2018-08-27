@@ -1,17 +1,15 @@
 package EM.service;
 
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario;
+import EM.Pessoa;
+import EM.PessoaDAO;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
