@@ -10,8 +10,6 @@ import javax.inject.Named;
 
 import EM.Pessoa;
 import EM.service.PessoaService;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario;
-import br.edu.ifpb.esperanca.daw2.services.UserService;
 
 @ViewScoped
 @Named

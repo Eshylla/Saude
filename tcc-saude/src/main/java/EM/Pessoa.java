@@ -27,11 +27,19 @@ public class Pessoa implements Identificavel {
 	@JoinTable(name="causa_pessoa", 
 	joinColumns= {@JoinColumn(name="id_causa")}, 
 	inverseJoinColumns= {@JoinColumn(name="id_pessoa")})
-	private Set<Campanha> camapanhas;
+	private Set<Campanha> campanhas;
 	
 	@ManyToMany(mappedBy="pessoas")
 	private Set<Doenca> doencas;
 
+	public Set<Campanha> getCampanhas() {
+		return campanhas;
+	}
+	
+	public void setCampanhas(Set<Campanha> campanhas) {
+		this.campanhas = campanhas;
+	}
+	
 	public Long getId() {
 		return id;
 	}
