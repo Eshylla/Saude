@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
-   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-   
-   <persistence-unit name="dodo" transaction-type="RESOURCE_LOCAL">
-      <properties>
-         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/floriu"/>
-         <property name="javax.persistence.jdbc.user" value="teste"/>
-         <property name="javax.persistence.jdbc.password" value="123"/>
-         <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-         <property name="hibernate.hbm2ddl.auto" value="update"/>
-      </properties>
-      
-   </persistence-unit>
-</persistence>
-
------------------
-<?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="ifoto_pu" transaction-type="RESOURCE_LOCAL">
 	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<non-jta-data-source>java:/ifotoDS</non-jta-data-source>
 	
-		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario</class>
-		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Curtida</class>
-		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Postagem</class>
-		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Rotulo</class>
-		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Comentario</class>
+		<class>EM.Campanha</class>
+		<class>EM.Causa</class>
+		<class>EM.Doenca</class>
+		<class>EM.Pessoa</class>
+		<class>EM.Tratamento</class>
 	
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
@@ -39,4 +19,3 @@
 		</properties>
 	</persistence-unit>
 </persistence>
------------------------------
