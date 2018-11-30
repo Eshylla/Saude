@@ -11,12 +11,12 @@
 
 	<h:form>
 	
-	sintoma: <h:inputText value="#{DoencaBean.doenca.tipoDoenca}"></h:inputText> 
+	sintoma: <h:inputText value="#{doencaBean.doenca.sintoma}"></h:inputText> 
 	
 	
 
 		<h:commandButton value="Cadastrar"
-			action="#{doencaBean.addDoencas()}"></h:commandButton>
+			action="#{doencaBean.addDoenca()}"></h:commandButton>
 		
 	</h:form>
 	<h:dataTable var="doe" value="#{doencaBean.doencas}">
@@ -26,7 +26,7 @@
 		</h:column>
 		<h:column>
 			<f:facet name="header">Opções</f:facet>
-			<h:commandButton  action="#{DoencaBean.remove(doe.id)}"></h:commandButton>
+			<h:commandButton  action="#{doencaBean.remove(doe.id)}"></h:commandButton>
 		</h:column>
 			
 	</h:dataTable>

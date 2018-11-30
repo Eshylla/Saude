@@ -38,6 +38,10 @@ public class Doenca implements Identificavel {
 			inverseJoinColumns= {@JoinColumn (name= "id_pessoa")})
 	private Set<Pessoa> pessoas;
 	
+	@ManyToMany
+	@JoinTable (name="doenca_campanha",
+			joinColumns= {@JoinColumn(name="id_doenca")},
+			inverseJoinColumns= {@JoinColumn (name= "id_campanha")})
 	private Set<Campanha> campanhas;
 	
 			
