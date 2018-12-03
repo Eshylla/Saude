@@ -1,24 +1,51 @@
 package EM.service;
 
+import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import EM.Campanha;
+import EM.CampanhaDAO;
 
-public class CampanhaService {
+import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
-	public Collection<Campanha> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public class CampanhaService implements Serializable, Service<Campanha>{
 
+
+	@Inject
+	private CampanhaDAO campanhaDAO;
+
+	@Override
+	@TransacionalCdi
 	public void save(Campanha campanha) {
-		// TODO Auto-generated method stub
-		
+		campanhaDAO.save(campanha);
 	}
 
-	public void getByID(Long id) {
-		// TODO Auto-generated method stub
-		
+	@Override
+	@TransacionalCdi
+	public void update(Campanha campanha) {
+		campanhaDAO.update(campanha);
 	}
+
+	@Override
+	@TransacionalCdi
+	public void remove(Campanha campanha) {
+		campanhaDAO.remove(campanha);
+	}
+
+	@Override
+	public Campanha getByID(long campanhaId) {
+		return campanhaDAO.getByID(campanhaId);
+	}
+
+	@Override
+	public List<Campanha> getAll() {
+		return campanhaDAO.getAll();
+	}
+
+
+
 
 }

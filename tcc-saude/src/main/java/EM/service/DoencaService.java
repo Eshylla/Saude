@@ -1,24 +1,49 @@
 package EM.service;
 
-import java.util.Collection;
+import java.io.Serializable;
+import java.util.List;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
 
 import EM.Doenca;
+import EM.DoencaDAO;
+import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
-public class DoencaService {
+@ApplicationScoped
+public class DoencaService implements Serializable, Service<Doenca> {
 
-	public Collection<Doenca> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	@Inject
+	private DoencaDAO doencaDAO;
 
+	@Override
+	@TransacionalCdi
 	public void save(Doenca doenca) {
-		// TODO Auto-generated method stub
-		
+		doencaDAO.save(doenca);
 	}
 
-	public void getByID(Long id) {
-		// TODO Auto-generated method stub
-		
+	@Override
+	@TransacionalCdi
+	public void update(Doenca doenca) {
+		doencaDAO.update(doenca);
 	}
+
+	@Override
+	@TransacionalCdi
+	public void remove(Doenca doenca) {
+		doencaDAO.remove(doenca);
+	}
+
+	@Override
+	public Doenca getByID(long doencaId) {
+		return doencaDAO.getByID(doencaId);
+	}
+
+	@Override
+	public List<Doenca> getAll() {
+		return doencaDAO.getAll();
+	}
+
 
 }

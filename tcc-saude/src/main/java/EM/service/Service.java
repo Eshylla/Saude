@@ -2,6 +2,7 @@ package EM.service;
 
 import java.util.List;
 
+import EM.Causa;
 import EM.Identificavel;
 
 public interface Service<E extends Identificavel> {
@@ -15,5 +16,7 @@ public interface Service<E extends Identificavel> {
 	E getByID(long userId);
 
 	List<E> getAll();
+
+	void save(Causa causa);
 
 }
