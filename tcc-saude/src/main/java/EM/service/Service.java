@@ -16,7 +16,4 @@ public interface Service<E extends Identificavel> {
 	E getByID(long userId);
 
 	List<E> getAll();
-
-	void save(Causa causa);
-
 }

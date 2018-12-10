@@ -20,6 +20,7 @@ public class Pessoa implements Identificavel {
 	private Long id;
 	private String nome;
 	private String username;
+	private String email;
 	private String password;
 	private String grupo;
 
@@ -80,17 +81,27 @@ public class Pessoa implements Identificavel {
 		this.grupo = grupo;
 	}
 
-	public Pessoa(Long id, String nome, String username, String password, String grupo) {
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Pessoa(Long id, String nome, String username, String password, String grupo, String email) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.username = username;
 		this.password = password;
 		this.grupo = grupo;
+		this.email = email;
 	}
 
 	public Pessoa() {
 		super();
 	}
+
 
 }

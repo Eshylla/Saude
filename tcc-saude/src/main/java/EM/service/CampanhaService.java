@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import EM.Campanha;
 import EM.CampanhaDAO;
-
+import EM.Causa;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 public class CampanhaService implements Serializable, Service<Campanha>{
